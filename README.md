@@ -1,6 +1,6 @@
 Just a personal overlay for Gentoo.
 
-Add https://github.com/sdfg2/sdfg-overlay/blob/master/repositories.xml to overlays in /etc/layman/layman.cfg.
+Add https://raw.github.com/sdfg2/sdfg-overlay/master/repositories.xml to overlays in /etc/layman/layman.cfg.
 
 Additions:
 
