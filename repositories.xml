@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+<repositories xmlns="" version="1.0">
+  <repo quality="experimental" status="unofficial">
+    <name><![CDATA[sdfg]]></name>
+    <description lang="en"><![CDATA[Personal overlay]]></description>
+    <homepage>https://github.com/sdfg2/sdfg-overlay</homepage>
+    <owner type="person">
+      <email>sdfgsteve2@gmail.com</email>
+      <name><![CDATA[Steve Gillespie]]></name>
+    </owner>
+    <source type="git">https://github.com/sdfg2/sdfg-overlay.git</source>
+  </repo>
+</repositories>
