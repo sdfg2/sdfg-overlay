@@ -72,7 +72,7 @@ src_prepare() {
 
 	# correct path to captcha script in default ejabberd.cfg
 #	sed -e 's|\(captcha_cmd: "\)".*"|\1/usr/'$(get_libdir)'/erlang/lib/'${P}'/priv/bin/captcha.sha"}|' \
-	sed -e 's|.*\(captcha_cmd: \).*|\1/usr/'$(get_libdir)'/erlang/lib/'${P}'/priv/bin/captcha.sha"|' \
+	sed -e 's|.*\(captcha_cmd: \).*|\1/usr/'$(get_libdir)'/erlang/lib/'${P}'/priv/bin/captcha.sh"|' \
 			-i ejabberd.yml.example || die "Failed sed ejabberd.yml.example"
 	eaclocal
 	eautoconf
@@ -91,7 +91,7 @@ src_configure() {
 		$(use_enable nif) \
 		$(use_enable odbc) \
 		$(use_enable mysql) \
-		$(use_enable pgsql) \
+		$(use_enable pgsql postgres) \
 		$(use_enable pam) \
 		$(use_enable zlib) \
 		$(use_enable stun) \
@@ -119,6 +119,8 @@ src_install() {
 
 	cd "${WORKDIR}/${P}/doc"
 	dodoc release_notes_*.txt
+
+	cp -R "${WORKDIR}/${P}/sql" "/usr/share/ejabberd"
 
 	#dodir /var/lib/ejabberd
 	newinitd "${FILESDIR}/${PN}-3.initd" ${PN}
