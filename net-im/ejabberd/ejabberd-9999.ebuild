@@ -40,7 +40,7 @@ JABBER_DOC="${EPREFIX}/usr/share/doc/${PF}"
 RNOTES_VER="3.0.0"
 
 src_prepare() {
-	git-2_src_prepare
+#	git-2_src_prepare
 	S=${WORKDIR}/${P}
 	cd "${S}"
 	AT_M4DIR="m4" eautoreconf
@@ -71,7 +71,6 @@ src_prepare() {
 		-i ejabberd.yml.example || die "Failed sed ejabberd.yml.example"
 
 	# correct path to captcha script in default ejabberd.cfg
-#	sed -e 's|\(captcha_cmd: "\)".*"|\1/usr/'$(get_libdir)'/erlang/lib/'${P}'/priv/bin/captcha.sha"}|' \
 	sed -e 's|.*\(captcha_cmd: \).*|\1/usr/'$(get_libdir)'/erlang/lib/'${P}'/priv/bin/captcha.sh"|' \
 			-i ejabberd.yml.example || die "Failed sed ejabberd.yml.example"
 	eaclocal
@@ -120,7 +119,7 @@ src_install() {
 	cd "${WORKDIR}/${P}/doc"
 	dodoc release_notes_*.txt
 
-	cp -R "${WORKDIR}/${P}/sql" "/usr/share/ejabberd"
+	cp -R "${WORKDIR}/${P}/sql" "${ROOT}/usr/share/ejabberd"
 
 	#dodir /var/lib/ejabberd
 	newinitd "${FILESDIR}/${PN}-3.initd" ${PN}
