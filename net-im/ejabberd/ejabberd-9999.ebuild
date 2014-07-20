@@ -25,7 +25,7 @@ DEPEND=">=dev-libs/expat-1.95
 	captcha? ( media-gfx/imagemagick[truetype,png] )"
 REQUIRED_USE="mssql? ( odbc )
 	mysql? ( odbc )
-	pgsql? ( odbc )"
+	postgres? ( odbc )"
 
 RDEPEND="${DEPEND}
 	>=sys-apps/shadow-4.1.4.2-r3
