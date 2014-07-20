@@ -19,7 +19,7 @@
 	<flag name='nif'>Replace some functions with C equivalents</flag>
 	<flag name='odbc'>ODBC support</flag>
 	<flag name='mysql'>MySQL support</flag>
-	<flag name='pgsql'>PostgreSQL support</flag>
+	<flag name='postgres'>PostgreSQL support</flag>
 	<flag name='pam'>PAM support</flag>
 	<flag name='zlib'>Stream Compression (XEP-0138) using zlib</flag>
 	<flag name='json'>JSON support for mod_bosh</flag>
