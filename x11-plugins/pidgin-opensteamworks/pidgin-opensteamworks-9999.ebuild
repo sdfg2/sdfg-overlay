@@ -17,13 +17,11 @@ ESVN_REPO_URI="http://pidgin-opensteamworks.googlecode.com/svn/trunk/ pidgin-ope
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE="openssl polarssl"
+IUSE=""
 
-REQUIRED_USE="^^ ( openssl polarssl )"
 RDEPEND="dev-libs/glib:2
 	dev-libs/json-glib
-	polarssl? ( net-libs/polarssl )
-	openssl? ( dev-libs/openssl )
+	net-libs/polarssl
 	gnome-base/libgnome-keyring
 	net-im/pidgin"
 DEPEND="${RDEPEND}
