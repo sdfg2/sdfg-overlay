@@ -1,7 +1,7 @@
 Only in svn: .svn
 diff -crB tarball/Makefile svn/Makefile
 *** tarball/Makefile	2013-07-07 09:54:00.000000000 +0100
---- svn/Makefile	2014-07-25 23:48:16.801901041 +0100
+--- svn/Makefile	2014-07-26 00:00:59.576404861 +0100
 ***************
 *** 1,17 ****
   
@@ -30,8 +30,8 @@ diff -crB tarball/Makefile svn/Makefile
 ! PLUGINDIR ?= $(shell $(PKG_CONFIG) --variable=plugindir purple)
   
 ! CFLAGS ?= -O2 -pipe
-! CFLAGS += -Wall -fPIC -DUSE_POLARSSL_CRYPTO -lpolarssl
-! LDFLAGS += -shared
+! CFLAGS += -Wall -fPIC -DUSE_POLARSSL_CRYPTO
+! LDFLAGS += -shared -lpolarssl
 ! CPPFLAGS += $(shell $(PKG_CONFIG) --cflags glib-2.0 json-glib-1.0 purple nss gnome-keyring-1)
 ! LIBS += $(shell $(PKG_CONFIG) --libs glib-2.0 json-glib-1.0 purple nss polarssl)
   
