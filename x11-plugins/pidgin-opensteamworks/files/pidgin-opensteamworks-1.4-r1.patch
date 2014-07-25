@@ -1,7 +1,7 @@
 Only in svn: .svn
 diff -crB tarball/Makefile svn/Makefile
 *** tarball/Makefile	2013-07-07 09:54:00.000000000 +0100
---- svn/Makefile	2014-07-25 23:38:39.736009687 +0100
+--- svn/Makefile	2014-07-25 23:46:15.563503458 +0100
 ***************
 *** 1,17 ****
   
@@ -32,7 +32,7 @@ diff -crB tarball/Makefile svn/Makefile
 ! CFLAGS ?= -O2 -pipe
 ! CFLAGS += -Wall -fPIC -DUSE_POLARSSL_CRYPTO
 ! LDFLAGS += -shared
-! CPPFLAGS += $(shell $(PKG_CONFIG) --cflags glib-2.0 json-glib-1.0 purple nss gnome-keyring-1 polarssl)
+! CPPFLAGS += $(shell $(PKG_CONFIG) --cflags glib-2.0 json-glib-1.0 purple nss gnome-keyring-1)
 ! LIBS += $(shell $(PKG_CONFIG) --libs glib-2.0 json-glib-1.0 purple nss polarssl)
   
 ! TARGET = libsteam.so
