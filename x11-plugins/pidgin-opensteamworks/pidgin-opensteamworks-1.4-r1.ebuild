@@ -36,7 +36,7 @@ pkg_setup() {
 
 src_prepare() {
 	# see http://code.google.com/p/pidgin-opensteamworks/issues/detail?id=31
-	epatch "${FILESDIR}"/${P}.patch
+	epatch "${FILESDIR}"/${PVR}.patch
 	cp "${FILESDIR}"/libjson-glib-1.0.dll "${S}"/ || die
 	# cp "${FILESDIR}"/${PN}-1.3-Makefile "${S}"/Makefile || die
 }
