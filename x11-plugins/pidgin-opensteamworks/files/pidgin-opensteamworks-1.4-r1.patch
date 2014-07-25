@@ -1,7 +1,7 @@
 Only in svn: .svn
 diff -crB tarball/Makefile svn/Makefile
 *** tarball/Makefile	2013-07-07 09:54:00.000000000 +0100
---- svn/Makefile	2014-07-25 21:56:09.075020489 +0100
+--- svn/Makefile	2014-07-25 23:38:39.736009687 +0100
 ***************
 *** 1,17 ****
   
@@ -30,10 +30,10 @@ diff -crB tarball/Makefile svn/Makefile
 ! PLUGINDIR ?= $(shell $(PKG_CONFIG) --variable=plugindir purple)
   
 ! CFLAGS ?= -O2 -pipe
-! CFLAGS += -Wall -fPIC
+! CFLAGS += -Wall -fPIC -DUSE_POLARSSL_CRYPTO
 ! LDFLAGS += -shared
-! CPPFLAGS += $(shell $(PKG_CONFIG) --cflags glib-2.0 json-glib-1.0 purple nss gnome-keyring-1)
-! LIBS += $(shell $(PKG_CONFIG) --libs glib-2.0 json-glib-1.0 purple nss)
+! CPPFLAGS += $(shell $(PKG_CONFIG) --cflags glib-2.0 json-glib-1.0 purple nss gnome-keyring-1 polarssl)
+! LIBS += $(shell $(PKG_CONFIG) --libs glib-2.0 json-glib-1.0 purple nss polarssl)
   
 ! TARGET = libsteam.so
 ! 
@@ -55,6 +55,7 @@ diff -crB tarball/Makefile svn/Makefile
 ! 	rm -f $(OBJS) $(TARGET)
   
 ! .PHONY: uninstall clean
+Only in svn: libjson-glib-1.0.dll
 diff -crB tarball/libsteam.c svn/libsteam.c
 *** tarball/libsteam.c	2014-01-14 20:26:39.000000000 +0000
 --- svn/libsteam.c	2014-07-25 21:59:20.012670613 +0100
@@ -412,6 +413,10 @@ diff -crB tarball/libsteam.h svn/libsteam.h
   };
   
   
+Only in svn: releases
+Only in svn: steam16.png
+Only in svn: steam22.png
+Only in svn: steam48.png
 diff -crB tarball/steam_rsa.c svn/steam_rsa.c
 *** tarball/steam_rsa.c	2013-06-10 07:07:53.000000000 +0100
 --- svn/steam_rsa.c	2014-07-25 21:59:20.010670606 +0100
