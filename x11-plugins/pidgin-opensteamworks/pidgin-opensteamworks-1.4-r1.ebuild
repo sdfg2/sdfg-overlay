@@ -42,7 +42,7 @@ src_prepare() {
 }
 
 src_compile() {
-	append_flags "-DUSE_POLARSSL_CRYPTO=yes"
+	append-flags "-DUSE_POLARSSL_CRYPTO=yes"
 	emake
 }
 
