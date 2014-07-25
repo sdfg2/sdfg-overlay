@@ -35,6 +35,10 @@ pkg_setup() {
 	fi
 }
 
+src_unpack() {
+	unpack ${A}
+}
+
 src_prepare() {
 	# see http://code.google.com/p/pidgin-opensteamworks/issues/detail?id=31
 	cp "${FILESDIR}"/${PN}-9999-Makefile "${S}"/Makefile || die
