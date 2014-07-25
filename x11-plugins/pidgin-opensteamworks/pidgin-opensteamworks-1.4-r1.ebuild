@@ -4,13 +4,12 @@
 
 EAPI=5
 
-inherit toolchain-funcs subversion
+inherit toolchain-funcs flag-o-matic
 
 DESCRIPTION="Steam protocol plugin for pidgin"
 HOMEPAGE="http://code.google.com/p/pidgin-opensteamworks/"
-ESVN_REPO_URI="http://pidgin-opensteamworks.googlecode.com/svn/trunk/steam-mobile"
-ESVN_PROJECT_NAME="pidgin-opensteamworks-read-only"
-SRC_URI="http://pidgin-opensteamworks.googlecode.com/files/icons.zip
+SRC_URI="http://pidgin-opensteamworks.googlecode.com/files/steam-mobile-${PV}.tar.bz2
+	http://pidgin-opensteamworks.googlecode.com/files/icons.zip
 	-> ${PN}-icons.zip"
 
 LICENSE="GPL-3"
@@ -35,13 +34,16 @@ pkg_setup() {
 	fi
 }
 
-src_unpack() {
-	unpack ${A}
-}
-
 src_prepare() {
 	# see http://code.google.com/p/pidgin-opensteamworks/issues/detail?id=31
-	cp "${FILESDIR}"/${PN}-9999-Makefile "${S}"/Makefile || die
+	epatch "${FILESDIR}"/${P}.patch
+	cp "${FILESDIR}"/libjson-glib-1.0.dll "${S}"/ || die
+	# cp "${FILESDIR}"/${PN}-1.3-Makefile "${S}"/Makefile || die
+}
+
+src_compile() {
+	append_cflags "-DUSE_POLARSSL_CRYPTO=yes"
+	emake
 }
 
 src_install() {
