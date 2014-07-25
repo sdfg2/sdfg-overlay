@@ -42,7 +42,7 @@ src_prepare() {
 }
 
 src_compile() {
-	append-flags "-DUSE_POLARSSL_CRYPTO" "-lpolarssl" "-I/usr/include/polarssl"
+	append-flags "-DUSE_POLARSSL_CRYPTO" "-lpolarssl"
 	emake
 }
 
