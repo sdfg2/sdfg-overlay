@@ -8,10 +8,10 @@ inherit toolchain-funcs subversion
 
 DESCRIPTION="Steam protocol plugin for pidgin"
 HOMEPAGE="http://code.google.com/p/pidgin-opensteamworks/"
-SRC_URI="http://pidgin-opensteamworks.googlecode.com/files/icons.zip
-	-> ${PN}-icons.zip"
 ESVN_REPO_URI="http://pidgin-opensteamworks.googlecode.com/svn/trunk/steam-mobile"
 ESVN_PROJECT_NAME="pidgin-opensteamworks-read-only"
+SRC_URI="http://pidgin-opensteamworks.googlecode.com/files/icons.zip
+	-> ${PN}-icons.zip"
 
 LICENSE="GPL-3"
 SLOT="0"
