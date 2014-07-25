@@ -41,11 +41,6 @@ src_prepare() {
 	# cp "${FILESDIR}"/${PN}-1.3-Makefile "${S}"/Makefile || die
 }
 
-src_compile() {
-	append-flags "-DUSE_POLARSSL_CRYPTO" "-lpolarssl"
-	emake
-}
-
 src_install() {
 	default
 	insinto /usr/share/pixmaps/pidgin/protocols
