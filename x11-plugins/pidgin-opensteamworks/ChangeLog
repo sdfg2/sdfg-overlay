@@ -2,11 +2,11 @@
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
 # $Header: /var/cvsroot/gentoo-x86/x11-plugins/pidgin-opensteamworks/ChangeLog,v 1.25 2014/01/29 02:54:58 mrueg Exp $
 
-+pidgin-opensteamworks-9999 (25 Jul 2014)
++pidgin-opensteamworks-1.4-r1 (25 Jul 2014)
 
-  25 Jul 2014; Steve Gillespie <sdfgsteve2@gmail.com>
-  +pidgin-opensteamworks-9999.ebuild:
-  
+  26 Jul 2014; Steve Gillespie <sdfgsteve2@gmail.com>
+  +pidgin-opensteamworks-1.4-r1.ebuild:
+  Patch to svn trunk for polarssl support.
 
 *pidgin-opensteamworks-1.4 (29 Jan 2014)
 

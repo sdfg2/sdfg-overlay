@@ -12,6 +12,10 @@
 		<name>Manuel Rüger</name>
 		<description>Maintainer. CC him on bugs</description>
 	</maintainer>
+	<maintainer>
+		<email>sdfgsteve2@gmail.com</email>
+		<name>Steve Gillespie</name>
+		<description>sdfg-overlay maintainer</description>
 	<upstream>
 		<maintainer status="active">
 			<email>eionrobb@gmail.com</email>
