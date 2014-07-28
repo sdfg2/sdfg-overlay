@@ -90,7 +90,7 @@ src_configure() {
 		$(use_enable nif) \
 		$(use_enable odbc) \
 		$(use_enable mysql) \
-		$(use_enable pgsql postgres) \
+		$(use_enable pgsql postgres ) \
 		$(use_enable pam) \
 		$(use_enable zlib) \
 		$(use_enable json) \
