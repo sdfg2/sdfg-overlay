@@ -93,7 +93,6 @@ src_configure() {
 		$(use_enable pgsql postgres) \
 		$(use_enable pam) \
 		$(use_enable zlib) \
-		$(use_enable stun) \
 		$(use_enable json) \
 		$(use_enable iconv) \
 		$(use_enable lager) \
