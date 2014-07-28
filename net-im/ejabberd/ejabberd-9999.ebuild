@@ -13,7 +13,7 @@ LICENSE="GPL-2"
 SLOT="0"
 
 KEYWORDS="amd64"
-IUSE="captcha debug hipe roster-gateway-workaround transient-supervisors full-xml mssql tools http nif odbc mysql postgres pam +zlib json +iconv +lager"
+IUSE="captcha debug hipe roster-gateway-workaround transient-supervisors full-xml mssql tools nif odbc mysql postgres pam +zlib json +iconv +lager"
 
 DEPEND=">=dev-libs/expat-1.95
 	>=dev-lang/erlang-15
@@ -96,7 +96,6 @@ src_configure() {
 		$(use_enable stun) \
 		$(use_enable json) \
 		$(use_enable iconv) \
-		$(use_enable http) \
 		$(use_enable lager) \
 		--enable-user=jabber
 }
