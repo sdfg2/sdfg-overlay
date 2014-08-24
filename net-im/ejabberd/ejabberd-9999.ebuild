@@ -52,12 +52,12 @@ src_prepare() {
 	sed -e "/^EJABBERDDIR[[:space:]]*=/{s:ejabberd:${PF}:}" \
 		-e "/^ETCDIR[[:space:]]*=/{s:@sysconfdir@/ejabberd:${JABBER_ETC}:}" \
 		-e "/^LOGDIR[[:space:]]*=/{s:@localstatedir@/log/ejabberd:${JABBER_LOG}:}" \
-		-e "/^SPOOLDIR[[:space:]]*=/{s:@localstatedir@/ejabberd:${JABBER_SPOOL}:}" \
+		-e "/^SPOOLDIR[[:space:]]*=/{s:@localstatedir@/lib/ejabberd:${JABBER_SPOOL}:}" \
 			-i Makefile.in || die
 	sed -e "/EJABBERDDIR=/{s:ejabberd:${PF}:}" \
-		-e "s|\(ETCDIR=\){{sysconfdir}}.*|\1${JABBER_ETC}|" \
+		-e "s|\(ETC_DIR=\){{sysconfdir}}.*|\1${JABBER_ETC}|" \
 		-e "s|\(LOGS_DIR=\){{localstatedir}}.*|\1${JABBER_LOG}|" \
-		-e "s|\(SPOOLDIR=\){{localstatedir}}.*|\1${JABBER_SPOOL}|" \
+		-e "s|\(SPOOL_DIR=\){{localstatedir}}.*|\1${JABBER_SPOOL}|" \
 			-i ejabberdctl.template || die
 
 	# Set shell, so it'll work even in case jabber user have no shell
