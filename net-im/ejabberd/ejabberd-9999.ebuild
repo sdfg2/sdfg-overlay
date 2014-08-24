@@ -119,7 +119,7 @@ src_install() {
 	cd "${WORKDIR}/${P}/doc"
 	dodoc release_notes_*.txt
 
-	cp -R "${WORKDIR}/${P}/sql" "${ROOT}/usr/share/ejabberd"
+	#cp -R "${WORKDIR}/${P}/sql" "${ROOT}/usr/share/ejabberd"
 
 	#dodir /var/lib/ejabberd
 	newinitd "${FILESDIR}/${PN}-3.initd" ${PN}
