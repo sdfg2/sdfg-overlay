@@ -22,6 +22,7 @@ DEPEND=">=dev-libs/expat-1.95
 	>=net-im/jabber-base-0.01
 	zlib? ( >=sys-libs/zlib-1.2.3 )
 	dev-lang/erlang[odbc?]
+	virtual/latex-base
 	captcha? ( media-gfx/imagemagick[truetype,png] )"
 REQUIRED_USE="mssql? ( odbc )
 	mysql? ( odbc )
