@@ -104,6 +104,7 @@ src_compile() {
 }
 
 src_install() {
+	emake DESTDIR="${ED}" doc
 	emake DESTDIR="${ED}" install
 
 	# Pam helper module permissions
