@@ -229,7 +229,7 @@ CDEPEND="
 	nginx_modules_http_metrics? ( dev-libs/yajl )
 	nginx_modules_http_dav_ext? ( dev-libs/expat )
 	nginx_modules_http_security? ( >=dev-libs/libxml2-2.7.8 dev-libs/apr-util www-servers/apache )
-	nginx_modules_http_passenger? ( www-apache/passengner )"
+	nginx_modules_http_passenger? ( www-apache/passenger )"
 RDEPEND="${CDEPEND}
 	selinux? ( sec-policy/selinux-nginx )
 "
