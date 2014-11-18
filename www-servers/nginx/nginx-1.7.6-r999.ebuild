@@ -451,7 +451,7 @@ src_configure() {
 		myconf+=" --add-module=${HTTP_MOGILEFS_MODULE_WD}"
 	fi
 
-	if use nginx_modules_http_passnger ; then
+	if use nginx_modules_http_passenger ; then
 		http_enabled=1
 		myconf+=" --add-module=/usr/share/phusion-passenger/source/ext/nginx"
 	fi
