@@ -22,7 +22,7 @@ DEPEND=">=net-im/jabber-base-0.01
 	>=dev-lang/erlang-15[ssl]
 	<dev-lang/erlang-16
 	>=dev-libs/libyaml-0.1.4
-	dev-db/postgresql-base
+	dev-db/postgresql
 	odbc? ( dev-db/unixODBC )
 	ldap? ( =net-nds/openldap-2* )
 	>=dev-libs/openssl-0.9.8e
