@@ -49,6 +49,10 @@ src_prepare() {
 		EPATCH_OPTS="-p2" epatch "${WORKDIR}"/${PN}-mod_statsdx-1118.patch
 	fi
 
+    S=${WORKDIR}/${P}
+    cd "${S}"
+    AT_M4DIR="m4" eautoreconf
+
 	# don't install release notes (we'll do this manually)
 	sed '/install .* [.][.]\/doc\/[*][.]txt $(DOCDIR)/d' -i Makefile.in || die
 	# Set correct paths
