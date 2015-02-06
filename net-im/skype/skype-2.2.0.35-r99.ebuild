@@ -56,7 +56,7 @@ RDEPEND="
 	selinux? ( sec-policy/selinux-skype )"
 
 # Required to get `lrelease` command for src_install()
-DEPEND="!qt-static? ( x11-libs/qt-core:4 )
+DEPEND="!qt-static? ( x11-libs/qtcore:4 )
 	selinux? ( sec-policy/selinux-skype )"
 
 QA_EXECSTACK="opt/skype/skype"
