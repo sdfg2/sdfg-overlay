@@ -47,16 +47,16 @@ RDEPEND="
 			x11-libs/libXrender
 			)
 		!qt-static? (
-			x11-libs/qtcore:4
-			x11-libs/qtdbus:4
-			x11-libs/qtgui:4[accessibility,dbus]
+			dev-qt/qtcore:4
+			dev-qt/qtdbus:4
+			dev-qt/qtgui:4[accessibility,dbus]
 			)
 		)
 	virtual/ttf-fonts
 	selinux? ( sec-policy/selinux-skype )"
 
 # Required to get `lrelease` command for src_install()
-DEPEND="!qt-static? ( x11-libs/qtcore:4 )
+DEPEND="!qt-static? ( dev-qt/qtcore:4 )
 	selinux? ( sec-policy/selinux-skype )"
 
 QA_EXECSTACK="opt/skype/skype"
