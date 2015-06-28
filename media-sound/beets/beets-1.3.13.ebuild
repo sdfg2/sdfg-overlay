@@ -38,7 +38,7 @@ RDEPEND="
 	echonest_tempo? ( dev-python/pyechonest[${PYTHON_USEDEP}] )
 	mpdstats? ( dev-python/python-mpd[${PYTHON_USEDEP}] )
 	lastgenre? ( dev-python/pylast[${PYTHON_USEDEP}] )
-	replaygain? ( gstreamer? ( media-libs/gstreamer dev-python/gobject ) !gstreamer? ( || ( media-sound/mp3gain media-sound/aacgain ) ) )
+	replaygain? ( gstreamer? ( media-libs/gstreamer dev-python/pygobject ) !gstreamer? ( || ( media-sound/mp3gain media-sound/aacgain ) ) )
 	web? ( dev-python/flask[${PYTHON_USEDEP}] )
 "
 
