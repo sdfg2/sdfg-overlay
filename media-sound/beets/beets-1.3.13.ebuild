@@ -22,6 +22,7 @@ LICENSE="MIT"
 IUSE="bpd chroma convert doc discogs echonest echonest_tempo lastgenre mpdstats replaygain test web"
 
 RDEPEND="
+	dev-python/jellyfish
 	dev-python/munkres[${PYTHON_USEDEP}]
 	>=dev-python/python-musicbrainz-ngs-0.4[${PYTHON_USEDEP}]
 	dev-python/unidecode[${PYTHON_USEDEP}]
