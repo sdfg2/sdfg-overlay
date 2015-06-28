@@ -19,7 +19,6 @@ Because beets is designed as a library, it can do almost anything you can imagin
 If beets doesn’t do what you want yet, writing your own plugin is shockingly simple if you know a little Python.
 	</longdescription>
   <use>
-    <flag name="beatport">Enable support for beatport.com API</flag>
     <flag name="bpd">Enable support for <pkg>media-sound/mpd</pkg> server emulation</flag>
     <flag name="chroma">Enable support for acoustic fingerprinting plugin using
 			(<pkg>media-libs/chromaprint</pkg>)</flag>
@@ -29,7 +28,6 @@ If beets doesn’t do what you want yet, writing your own plugin is shockingly s
     <flag name="echonest">Enable support for fetching and storing acoustic attributes of a track from Echo Nest</flag>
     <flag name="lastgenre">Enable support for importing music genres from last.fm tags</flag>
     <flag name="mpdstats">Enable support for collecting statistic about listening habits from <pkg>media-sound/mpd</pkg></flag>
-    <flag name="replaygain">Enable support for Replay Gain metadata calculation during import</flag>
     <flag name="web">Enable embedded webserver support through <pkg>dev-python/flask</pkg></flag>
   </use>
   <upstream>
