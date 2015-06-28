@@ -19,7 +19,7 @@ HOMEPAGE="http://beets.radbox.org/ http://pypi.python.org/pypi/beets"
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
 LICENSE="MIT"
-IUSE="beatport bpd chroma convert doc discogs echonest echonest_tempo lastgenre mpdstats replaygain test web"
+IUSE="bpd chroma convert doc discogs echonest echonest_tempo lastgenre mpdstats replaygain test web"
 
 RDEPEND="
 	dev-python/munkres[${PYTHON_USEDEP}]
@@ -27,7 +27,6 @@ RDEPEND="
 	dev-python/unidecode[${PYTHON_USEDEP}]
 	>=media-libs/mutagen-1.22[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
-	beatport? ( dev-python/requests[${PYTHON_USEDEP}] )
 	bpd? ( dev-python/bluelet[${PYTHON_USEDEP}] )
 	chroma? ( dev-python/pyacoustid[${PYTHON_USEDEP}] )
 	convert? ( media-video/ffmpeg:0[encode] )
