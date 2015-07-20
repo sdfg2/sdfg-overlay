@@ -19,7 +19,7 @@ HOMEPAGE="http://beets.radbox.org/ http://pypi.python.org/pypi/beets"
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
 LICENSE="MIT"
-IUSE="bpd chroma convert doc discogs echonest echonest_tempo gstreamer lastgenre mpdstats replaygain test web"
+IUSE="bpd chroma convert doc discogs echonest gstreamer lastgenre mpdstats replaygain test web"
 
 RDEPEND="
 	>=dev-python/enum34-1.0.4
