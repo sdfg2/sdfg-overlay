@@ -1,4 +1,4 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/media-sound/beets/beets-1.3.3-r1.ebuild,v 1.1 2014/05/13 16:48:35 sochotnicky Exp $
 
@@ -37,9 +37,7 @@ RDEPEND="
 	echonest? ( >=dev-python/pyechonest-8.0.1[${PYTHON_USEDEP}] )
 	mpdstats? ( dev-python/python-mpd[${PYTHON_USEDEP}] )
 	lastgenre? ( dev-python/pylast[${PYTHON_USEDEP}] )
-	replaygain? ( gstreamer? ( media-libs/gstreamer[introspection] media-libs/gst-plugins-good dev-python/pygobject:3 ogg? ( 
-media-plugins/gst-plugins-ogg ) flac? ( media-plugins/gst-plugins-flac ) opus? ( media-plugins-gst-plugins-opus ) ) !gstreamer? ( 
-|| ( media-sound/mp3gain media-sound/aacgain ) ) )
+	replaygain? ( gstreamer? ( media-libs/gstreamer:1.0[introspection] media-libs/gst-plugins-good:1.0 dev-python/pygobject:3 ogg? ( media-plugins/gst-plugins-ogg ) flac? ( media-plugins/gst-plugins-flac:1.0 ) opus? ( media-plugins/gst-plugins-opus:1.0 ) ) gstreamer? ( || ( media-sound/mp3gain media-sound/aacgain ) ) )
 	web? ( dev-python/flask[${PYTHON_USEDEP}] )
 "
 
