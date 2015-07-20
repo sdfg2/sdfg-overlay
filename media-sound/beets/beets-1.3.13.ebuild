@@ -19,7 +19,7 @@ HOMEPAGE="http://beets.radbox.org/ http://pypi.python.org/pypi/beets"
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
 LICENSE="MIT"
-IUSE="bpd chroma convert doc discogs echonest gstreamer lastgenre mpdstats replaygain test web"
+IUSE="bpd chroma convert doc discogs echonest gstreamer lastgenre mpdstats replaygain test web ogg opus flac"
 
 RDEPEND="
 	>=dev-python/enum34-1.0.4
@@ -37,7 +37,9 @@ RDEPEND="
 	echonest? ( >=dev-python/pyechonest-8.0.1[${PYTHON_USEDEP}] )
 	mpdstats? ( dev-python/python-mpd[${PYTHON_USEDEP}] )
 	lastgenre? ( dev-python/pylast[${PYTHON_USEDEP}] )
-	replaygain? ( gstreamer? ( media-libs/gstreamer[introspection] media-libs/gst-plugins-good dev-python/pygobject:3 ) !gstreamer? ( || ( media-sound/mp3gain media-sound/aacgain ) ) )
+	replaygain? ( gstreamer? ( media-libs/gstreamer[introspection] media-libs/gst-plugins-good dev-python/pygobject:3 ogg? ( 
+media-plugins/gst-plugins-ogg ) flac? ( media-plugins/gst-plugins-flac ) opus? ( media-plugins-gst-plugins-opus ) ) !gstreamer? ( 
+|| ( media-sound/mp3gain media-sound/aacgain ) ) )
 	web? ( dev-python/flask[${PYTHON_USEDEP}] )
 "
 
