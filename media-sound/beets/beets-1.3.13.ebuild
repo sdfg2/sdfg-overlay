@@ -37,7 +37,7 @@ RDEPEND="
 	echonest? ( >=dev-python/pyechonest-8.0.1[${PYTHON_USEDEP}] )
 	mpdstats? ( dev-python/python-mpd[${PYTHON_USEDEP}] )
 	lastgenre? ( dev-python/pylast[${PYTHON_USEDEP}] )
-	replaygain? ( gstreamer? ( media-libs/gstreamer[introspection] dev-python/pygobject:3 ) !gstreamer? ( || ( media-sound/mp3gain media-sound/aacgain ) ) )
+	replaygain? ( gstreamer? ( media-libs/gstreamer[introspection] media-libs/gst-plugins-good dev-python/pygobject:3 ) !gstreamer? ( || ( media-sound/mp3gain media-sound/aacgain ) ) )
 	web? ( dev-python/flask[${PYTHON_USEDEP}] )
 "
 
