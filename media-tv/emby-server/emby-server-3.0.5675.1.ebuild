@@ -40,7 +40,7 @@ pkg_setup() {
 # gentoo expects a specific subfolder in the working directory for the extracted source, so simply extracting won't work here
 src_unpack() {
         unpack ${A}
-        mv MediaBrowser-${PV} emby-server-${PV}
+        mv Emby-${PV} emby-server-${PV}
 }
 
 src_prepare() {
