@@ -102,7 +102,7 @@ src_prepare() {
 		fi
 	done
 
-	for flag in bpd lastgenre web;do
+	for flag in bpd lastgenre web metasync;do
 		if ! use $flag ; then
 			sed -i "s:'beetsplug.$flag',::" setup.py || \
 				die "Unable to disable $flag plugin "
