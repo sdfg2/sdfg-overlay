@@ -4,19 +4,19 @@ Add https://raw.github.com/sdfg2/sdfg-overlay/master/repositories.xml to overlay
 
 Additions:
 
-net-im/ejabberd-9999
+media-sound/beets
 
-ejabberd moved to a new build system, a new config language, and a new versioning system late in 2013.  One of the problems with this is that, at present, the build script (rebar) pulls components for ejabberd from the master branches of remote repositories.  Obviously, this isn't good for debugging purposes, especially on a source distro like Gentoo.  So, at the moment, there are no >=net-im/ejabberd-13.x stable builds.  This is a known issue, but until the ejabberd devs use tagged branches for rebar to ensure consistent builds, we're stuck with a -9999 'live' ebuild.  This was my attempt to create one.  It's based mainly on rion's -9999 ebuild (thank you!) but updated for the new build system and config language (moving from erlang to yaml - much better in my opinion).
+Updated ebuild for beets, currently 1.3.15.  My previous ebuild was taken into portage, so I'm hoping it might become more regular.  1.3.15 has been tightened up considerably from previous versions, adding more constrictions on plugins that require outside dependencies.  I made the decision to stick to gstreamer for almost all plugin needs, as it seems to be the easiest to maintain, especially for the convert plugin.  The one plugin that WILL DEFINITELY NOT WORK is ipfs - I'm still trying to figure out the best way to write a go-ipfs ebuild to support it.
 
-This is also my first 'public' ebuild, so be gentle.  Please flag any issues on github.
+dev-python/pyechonest
 
-www-servers/nginx-x-r999
+8.0.1 was a required dep for beets.  I see that there is ~9.0.0 in portage now, so I'll be testing that shortly, if it works then 8.0.1 will disappear.
 
-Despite the fact that nginx can quite happily support passenger - both runtime and as a compile-time flag - and that passenger is, in my experience, the easiest way of providing ruby applications, there isn't support for building it in in the main www-servers/nginx branch.  This is very much a personal bugbear, and all I do is apply simple changes to add passenger support.  (Another bug-bear is passenger having apache as an RDEP, but I'll get to that eventually. ;-) )  This has NOT been cleaned and tested as thoroughly as the others.
+dev-python/jellyfish
 
-x11-plugins/pidgin-opensteamworks-1.4-r1
+I wrote the first ebuild for jellyfish to support beets - again, there seems to be an update from 0.5.0 to 0.5.1 in portage, so this will probably disappear in the future.
 
-The current available source code tarball for this relies on NSS, which has some problems encrypting Steam passwords on Gentoo.  
-I patched 1.4 up to the current svn trunk, which contains PolarSSL instead, tweaked the Makefile to link to the correct 
-libraries, plus merged the extraneous Makefile in with the patch for the rest of the source files.  Confirmed working on 
-spectrum2 transport service on the ejabberd XMPP server.
+media-tv/emby-server
+
+The megacoffee overlay version didn't work previously, so I made my own to cover that.  I haven't tested the newer versions of the megacoffee one, if they work as intended now then this will be gone too in the future.
+
