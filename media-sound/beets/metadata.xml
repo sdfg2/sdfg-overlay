@@ -2,7 +2,7 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
   <maintainer>
-    <email>maintainer-needed@gentoo.org</email>
+    <email>sdfgsteve2@gmail.com</email>
   </maintainer>
   <longdescription lang="en">
 The purpose of beets is to get your music collection right once and for all. It catalogs your collection, automatically improving its metadata as it goes using the MusicBrainz database. (It also downloads cover art for albums it imports.) Then it provides a bouquet of tools for manipulating and accessing your music.
@@ -28,7 +28,10 @@ If beets doesn’t do what you want yet, writing your own plugin is shockingly s
     <flag name="mpdstats">Enable support for collecting statistic about listening habits from <pkg>media-sound/mpd</pkg></flag>
     <flag name="web">Enable embedded webserver support through <pkg>dev-python/flask</pkg></flag>
 	<flag name="replaygain">Enable replaygain tagging</flag>
+	<flag name="gstreamer">Enable gstreamer plugin for replaygain</flag>
 	<flag name="opus">Enable opus support for replaygain tagging</flag>
+	<flag name="ogg">Enable ogg support for replaygain tagging</flag>
+	<flag name="flac">Enable flac support for replaygain tagging</flag>
 	<flag name="echonest">Enable support for fetching and storing acoustic attributes of a track from Echo Nest</flag>
   </use>
   <upstream>
