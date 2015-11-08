@@ -48,7 +48,7 @@ S=${WORKDIR}/${MY_P}
 
 src_prepare() {
 	# remove plugins that do not have appropriate dependencies installed
-	for flag in bpd chroma convert discogs echonest echonest_tempo lastgenre \
+	for flag in bpd chroma convert discogs echonest lastgenre \
 				mpdstats replaygain web;do
 		if ! use $flag ; then
 			rm -r beetsplug/${flag}.py || \
