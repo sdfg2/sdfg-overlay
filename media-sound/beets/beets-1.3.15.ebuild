@@ -19,8 +19,14 @@ HOMEPAGE="http://beets.radbox.org/ http://pypi.python.org/pypi/beets"
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
 LICENSE="MIT"
-IUSE="bpd chroma convert doc discogs echonest gstreamer lastgenre mpdstats replaygain test web ogg opus flac"
+IUSE="bpd chroma convert doc discogs echonest gstreamer lastgenre mpdstats replaygain test web ogg opus flac metasync amarok"
 
+REQUIRED_USE="
+	replaygain? ( gstreamer )
+	bpd? ( gstreamer )
+	chroma? ( gstreamer )
+	amarok? ( metasync )
+"
 RDEPEND="
 	>=dev-python/enum34-1.0.4
 	dev-python/jellyfish
@@ -29,16 +35,55 @@ RDEPEND="
 	dev-python/unidecode[${PYTHON_USEDEP}]
 	>=media-libs/mutagen-1.27[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
-	bpd? ( dev-python/bluelet[${PYTHON_USEDEP}] )
-	chroma? ( dev-python/pyacoustid[${PYTHON_USEDEP}] )
-	convert? ( media-video/ffmpeg:0[encode] )
-	discogs? ( dev-python/discogs-client[${PYTHON_USEDEP}] )
-	doc? ( dev-python/sphinx )
-	echonest? ( >=dev-python/pyechonest-8.0.1[${PYTHON_USEDEP}] )
-	mpdstats? ( dev-python/python-mpd[${PYTHON_USEDEP}] )
-	lastgenre? ( dev-python/pylast[${PYTHON_USEDEP}] )
-	replaygain? ( gstreamer? ( media-libs/gstreamer:1.0[introspection] media-libs/gst-plugins-good:1.0 dev-python/pygobject:3 ogg? ( media-plugins/gst-plugins-ogg ) flac? ( media-plugins/gst-plugins-flac:1.0 ) opus? ( media-plugins/gst-plugins-opus:1.0 ) ) gstreamer? ( || ( media-sound/mp3gain media-sound/aacgain ) ) )
-	web? ( dev-python/flask[${PYTHON_USEDEP}] )
+	bpd? (
+		dev-python/bluelet[${PYTHON_USEDEP}]
+		dev-python/gst-python:*
+	)
+	chroma? (
+		dev-python/pyacoustid[${PYTHON_USEDEP}]
+		media-libs/chromaprint
+	)
+	convert? (
+		media-video/ffmpeg:0[encode]
+	)
+	discogs? (
+		dev-python/discogs-client[${PYTHON_USEDEP}]
+	)
+	doc? (
+		dev-python/sphinx
+	)
+	echonest? (
+		>=dev-python/pyechonest-8.0.1[${PYTHON_USEDEP}]
+	)
+	mpdstats? (
+		dev-python/python-mpd[${PYTHON_USEDEP}]
+	)
+	lastgenre? (
+		dev-python/pylast[${PYTHON_USEDEP}]
+	)
+	gstreamer? (
+		media-libs/gstreamer:1.0[introspection]
+		media-libs/gst-plugins-good:1.0
+		dev-python/pygobject:3
+		ogg? (
+			media-plugins/gst-plugins-ogg
+		)
+		flac? (
+			media-plugins/gst-plugins-flac:1.0
+		)
+		opus? (
+			media-plugins/gst-plugins-opus:1.0
+		)
+	)
+	web? (
+		dev-python/flask[${PYTHON_USEDEP}]
+	)
+	metasync? (
+		amarok? (
+			dev-python/dbus-python
+			media-sound/amarok
+		)
+	)
 "
 
 DEPEND="${RDEPEND}
@@ -49,7 +94,7 @@ S=${WORKDIR}/${MY_P}
 src_prepare() {
 	# remove plugins that do not have appropriate dependencies installed
 	for flag in bpd chroma convert discogs echonest lastgenre \
-				mpdstats replaygain web;do
+				mpdstats replaygain web metasync;do
 		if ! use $flag ; then
 			rm -r beetsplug/${flag}.py || \
 			rm -r beetsplug/${flag}/ ||
