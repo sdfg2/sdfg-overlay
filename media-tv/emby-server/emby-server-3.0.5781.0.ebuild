@@ -70,7 +70,7 @@ src_install() {
 	einfo "installing compiled files"
 	diropts -oemby -gemby
 	dodir ${INSTALL_DIR}
-	cp -R "${S}/MediaBrowser.Server.Mono/bin/Release Mono/*" "${D}${INSTALL_DIR}/" || die "install failed, possibly compile did not succeed earlier?"
+	cp -R "${S}"/MediaBrowser.Server.Mono/bin/Release\ Mono/* "${D}${INSTALL_DIR}/" || die "install failed, possibly compile did not succeed earlier?"
 	chown emby:emby -R "${D}${INSTALL_DIR}"
 
 	# as we use the system libraries, we delete the local ones now as we couldn't do it before
