@@ -1,21 +1,21 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
 EAPI="5"
 
 inherit eutils user git-r3
 
-DESCRIPTION="Emby Server (formerly known as MediaBrowser Server) is a software that indexes a lot of different kinds of media and allows for them to be retrieved and played through the DLNA protocol on any device capable of processing them."
+DESCRIPTION="Emby Server is a media manager and server."
 HOMEPAGE="http://emby.media/"
-KEYWORDS="-* ~arm ~amd64 ~x86"
+KEYWORDS="-* ~amd64 ~x86"
 SRC_URI="https://github.com/MediaBrowser/MediaBrowser/archive/${PV}.tar.gz"
 SLOT="0"
 LICENSE="GPL-2"
 IUSE=""
 RESTRICT="mirror test"
 
-RDEPEND=">=dev-lang/mono-3.2.7
+RDEPEND=">=dev-lang/mono-3.12.1
 	>=media-video/ffmpeg-2[vpx]
 	>=media-libs/libmediainfo-0.7
 	media-gfx/imagemagick[jpeg,jpeg2k,webp,png]
@@ -39,8 +39,8 @@ pkg_setup() {
 
 # gentoo expects a specific subfolder in the working directory for the extracted source, so simply extracting won't work here
 src_unpack() {
-        unpack ${A}
-        mv Emby-${PV} emby-server-${PV}
+	unpack ${A}
+	mv Emby-${PV} emby-server-${PV}
 }
 
 src_prepare() {
@@ -49,7 +49,6 @@ src_prepare() {
 	einfo "adapting to imagemagick library to: ${MAGICKWAND}"
 	sed -i -e "s/\"libMagickWand-6.Q8.so\"/\"${MAGICKWAND}\"/" MediaBrowser.Server.Mono/ImageMagickSharp.dll.config || die "could not update libMagickWand reference!"
 }
-
 
 src_compile() {
 	einfo "updating root certificates for mono certificate store"
@@ -65,17 +64,17 @@ src_install() {
 
 	einfo "preparing startup log file"
 	dodir /var/log/
-	touch ${D}${STARTUP_LOG}
-	chown emby:emby ${D}${STARTUP_LOG}
+	touch "${D}${STARTUP_LOG}"
+	chown emby:emby "${D}${STARTUP_LOG}"
 
 	einfo "installing compiled files"
 	diropts -oemby -gemby
 	dodir ${INSTALL_DIR}
-	cp -R ${S}/MediaBrowser.Server.Mono/bin/Release\ Mono/* ${D}${INSTALL_DIR}/ || die "install failed, possibly compile did not succeed earlier?"
-	chown emby:emby -R ${D}${INSTALL_DIR}
+	cp -R "${S}"/MediaBrowser.Server.Mono/bin/Release\ Mono/* "${D}${INSTALL_DIR}/" || die "install failed, possibly compile did not succeed earlier?"
+	chown emby:emby -R "${D}${INSTALL_DIR}"
 
 	# as we use the system libraries, we delete the local ones now as we couldn't do it before
-	rm -R ${D}${INSTALL_DIR}/MediaInfo
+	rm -R "${D}${INSTALL_DIR}"/MediaInfo
 
 	einfo "prepare data directory"
 	dodir ${DATA_DIR}
@@ -113,4 +112,3 @@ pkg_prerm() {
 		${INIT_SCRIPT} stop
 	fi
 }
-

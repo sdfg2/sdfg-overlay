@@ -6,7 +6,7 @@ EAPI="5"
 
 inherit eutils user git-r3
 
-DESCRIPTION="Emby Server is a media manager and server."
+DESCRIPTION="Emby brings together your personal videos, music, photos, and live television."
 HOMEPAGE="http://emby.media/"
 KEYWORDS="-* ~amd64 ~x86"
 SRC_URI="https://github.com/MediaBrowser/MediaBrowser/archive/${PV}.tar.gz"

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>sdfgsteve2@gmail.com</email>
+	</maintainer>
+	<longdescription lang="en">
+		Emby brings together your personal videos, music, photos, and live television.
+
+		* automatically converts and streams your personal media on the fly to play on any device.
+		* makes it easy to enjoy your personal media while away from home. Just sign in and play.
+		* Stream Live TV to any device, manage your DVR, and enjoy your library of recordings.
+		* Sync your personal media to smart phones and tablets for easy offline access. Automatically sync new content as you add it.
+		* Emby organizes your content into easy and elegant presentations. Your personal media will never look the same.
+		* Easy web-based tools help you edit metadata and images, search for subtitles, and more.
+		* Easily control content access for your children. Monitor and remote control their sessions as you need to.
+		* Specify parental restrictions for your children, create access schedules, time limits, and more.
+		* Emby automatically detects Dlna devices on your network so that you can easily send content, remote control, and more.
+		* Send videos, music, photos, and Live TV to Chromecast with ease.
+		* Sync your personal media to the cloud for easy backup, archiving, and converting. Store your content in multiple resolutions to enable direct streaming from any device.
+	
+	</longdescription>
+	<use>
+  </use>
+</pkgmetadata>
