@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-	<maintainer>
+	<maintainer type="person">
 		<email>sdfgsteve2@gmail.com</email>
+		<name>Steve Gillespie</name>
 	</maintainer>
 	<longdescription lang="en">
 		Emby brings together your personal videos, music, photos, and live television.
