@@ -33,7 +33,7 @@ RDEPEND="
 	dev-python/munkres[${PYTHON_USEDEP}]
 	>=dev-python/python-musicbrainz-ngs-0.4[${PYTHON_USEDEP}]
 	dev-python/unidecode[${PYTHON_USEDEP}]
-	>=media-libs/mutagen-1.27[${PYTHON_USEDEP}]
+	>=media-libs/mutagen-1.33[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	bpd? (
 		dev-python/bluelet[${PYTHON_USEDEP}]
