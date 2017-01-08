@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -19,7 +19,7 @@ HOMEPAGE="http://beets.radbox.org/ http://pypi.python.org/pypi/beets"
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
 LICENSE="MIT"
-IUSE="badfiles bpd chroma convert doc discogs echonest gstreamer lastgenre mpdstats replaygain test web ogg opus flac metasync amarok"
+IUSE="badfiles bpd chroma convert doc discogs gstreamer lastgenre mpdstats replaygain test web ogg opus flac metasync amarok"
 
 REQUIRED_USE="
 	replaygain? ( gstreamer )
@@ -51,9 +51,6 @@ RDEPEND="
 	)
 	doc? (
 		dev-python/sphinx
-	)
-	echonest? (
-		>=dev-python/pyechonest-8.0.1[${PYTHON_USEDEP}]
 	)
 	badfiles? (
 		media-libs/flac
@@ -96,7 +93,7 @@ S=${WORKDIR}/${MY_P}
 
 src_prepare() {
 	# remove plugins that do not have appropriate dependencies installed
-	for flag in bpd chroma convert discogs echonest lastgenre \
+	for flag in bpd chroma convert discogs lastgenre \
 				mpdstats replaygain web metasync;do
 		if ! use $flag ; then
 			rm -r beetsplug/${flag}.py || \

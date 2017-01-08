@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-  <maintainer>
+  <maintainer type="person">
     <email>sdfgsteve2@gmail.com</email>
   </maintainer>
   <longdescription lang="en">
@@ -28,11 +28,10 @@ If beets doesn’t do what you want yet, writing your own plugin is shockingly s
     <flag name="mpdstats">Enable support for collecting statistic about listening habits from <pkg>media-sound/mpd</pkg></flag>
     <flag name="web">Enable embedded webserver support through <pkg>dev-python/flask</pkg></flag>
 	<flag name="replaygain">Enable replaygain tagging</flag>
-	<flag name="echonest">Enable support for fetching and storing acoustic attributes of a track from Echo Nest</flag>
-	<flag name="mpdstats">Enable support for stats syncing with MPD</flag>
 	<flag name="metasync">Enable support for syncing metadata with media players</flag>
 	<flag name="amarok">Enable extra support for syncing metadata with Amarok</flag>
 	<flag name="opus">Enable support for the opus audio format</flag>
+	<flag name="badfiles">Enable support for badfiles plugin to check for missing and corrupt files</flag>
   </use>
   <upstream>
     <remote-id type="pypi">beets</remote-id>
