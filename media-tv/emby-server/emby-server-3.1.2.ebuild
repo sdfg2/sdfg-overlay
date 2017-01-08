@@ -20,6 +20,7 @@ RDEPEND=">=dev-lang/mono-3.2.7
 	>=media-libs/libmediainfo-0.7
 	media-gfx/imagemagick[jpeg,jpeg2k,webp,png]
 	!media-tv/mediabrowser-server
+	dev-dotnet/referenceassemblies-pcl
 	>=dev-db/sqlite-3.0.0"
 DEPEND="app-arch/unzip ${RDEPEND}"
 
